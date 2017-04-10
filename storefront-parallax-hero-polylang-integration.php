@@ -5,7 +5,7 @@
  * Description: Plugin for adding Polylang support to the Storefront Parallax Hero plugin
  * Author: Antonio de Carvalho
  * Author URI: http://https://github.com/decarvalhoaa/
- * Version: 1.0.0
+ * Version: 1.0.1
  *
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -147,7 +147,7 @@ final class SPH_Poly_Integration {
 	public function sph_poly_setup() {
 		$theme = wp_get_theme();
 
-		if ( 'Storefront' == $theme->name || 'storefront' == $theme->template && apply_filters( 'storefront_parallax_hero_enabled', true ) && function_exists( 'pll_the_languages' ) ) {
+		if ( ( 'Storefront' == $theme->name || 'storefront' == $theme->template ) && apply_filters( 'storefront_parallax_hero_enabled', true ) && function_exists( 'pll_the_languages' ) ) {
 			$this->sph_hero_strings = array(
 				'Heading text' => sanitize_text_field( get_theme_mod( 'sph_hero_heading_text', __( 'Heading Text', 'storefront-parallax-hero' ) ) ),
 				'Description text' => wp_kses_post( get_theme_mod( 'sph_hero_text', __( 'Description Text', 'storefront-parallax-hero' ) ) ),
